@@ -6,7 +6,7 @@
 
   <groupId>net.pincette</groupId>
   <artifactId>pincette-jwt</artifactId>
-  <version>1.0</version>
+  <version>1.0.1</version>
   <name>pincette-jwt</name>
   <description>JWT Utilities for Auth0</description>
   <url>https://github.com/wdonne/pincette-jwt</url>
