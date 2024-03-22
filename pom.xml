@@ -6,7 +6,7 @@
 
   <groupId>net.pincette</groupId>
   <artifactId>pincette-jwt</artifactId>
-  <version>1.0.2</version>
+  <version>1.1.0</version>
   <name>pincette-jwt</name>
   <description>JWT Utilities for Auth0</description>
   <url>https://github.com/wdonne/pincette-jwt</url>
@@ -52,7 +52,12 @@
     <dependency>
       <groupId>net.pincette</groupId>
       <artifactId>pincette-common</artifactId>
-      <version>2.3.5</version>
+      <version>2.4.0</version>
+    </dependency>
+    <dependency>
+      <groupId>net.pincette</groupId>
+      <artifactId>pincette-json</artifactId>
+      <version>2.1.1</version>
     </dependency>
     <dependency>
       <groupId>com.auth0</groupId>
@@ -93,11 +98,6 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.11.0</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

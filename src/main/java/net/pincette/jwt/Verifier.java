@@ -10,7 +10,7 @@ import static com.auth0.jwt.algorithms.Algorithm.RSA384;
 import static com.auth0.jwt.algorithms.Algorithm.RSA512;
 import static net.pincette.jwt.Util.publicKey;
 import static net.pincette.util.Util.must;
-import static net.pincette.util.Util.tryToGetRethrow;
+import static net.pincette.util.Util.tryToGetSilent;
 
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.interfaces.DecodedJWT;
@@ -82,6 +82,6 @@ public class Verifier {
    * @return An optional value that will be empty when the JWT can't be verified.
    */
   public Optional<DecodedJWT> verify(final DecodedJWT jwt) {
-    return tryToGetRethrow(() -> verifiers[selectVerifier(jwt.getAlgorithm())].verify(jwt));
+    return tryToGetSilent(() -> verifiers[selectVerifier(jwt.getAlgorithm())].verify(jwt));
   }
 }

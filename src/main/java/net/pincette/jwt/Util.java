@@ -1,5 +1,6 @@
 package net.pincette.jwt;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.security.KeyFactory.getInstance;
 import static java.util.Arrays.stream;
 import static java.util.Base64.getDecoder;
@@ -13,14 +14,18 @@ import java.security.PublicKey;
 import java.security.spec.EncodedKeySpec;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
+import java.util.Optional;
+import javax.json.JsonObject;
+import javax.json.JsonValue;
 import net.pincette.function.BiFunctionWithException;
+import net.pincette.json.JsonUtil;
 
 /**
  * Some utilities.
  *
  * @author Werner Donné
  */
-class Util {
+public class Util {
   private Util() {}
 
   private static byte[] decode(final String key) {
@@ -35,6 +40,18 @@ class Util {
       final EncodedKeySpec spec, final BiFunctionWithException<KeyFactory, EncodedKeySpec, T> gen) {
     return tryToGetSilent(() -> gen.apply(getInstance("RSA"), spec))
         .orElseGet(() -> tryToGetRethrow(() -> gen.apply(getInstance("EC"), spec)).orElse(null));
+  }
+
+  public static Optional<JsonObject> getJwtPayload(final String token) {
+    return Optional.of(token)
+        .map(t -> t.split("\\."))
+        .filter(s -> s.length > 1)
+        .map(s -> s[1].replace('-', '+').replace('_', '/'))
+        .map(s -> getDecoder().decode(s))
+        .map(b -> new String(b, UTF_8))
+        .flatMap(JsonUtil::from)
+        .filter(JsonUtil::isObject)
+        .map(JsonValue::asJsonObject);
   }
 
   static PrivateKey privateKey(final String key) {
