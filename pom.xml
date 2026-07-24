@@ -6,7 +6,7 @@
 
   <groupId>net.pincette</groupId>
   <artifactId>pincette-jwt</artifactId>
-  <version>1.1.6</version>
+  <version>1.1.7</version>
   <name>pincette-jwt</name>
   <description>JWT Utilities for Auth0</description>
   <url>https://github.com/wdonne/pincette-jwt</url>
@@ -57,17 +57,17 @@
     <dependency>
       <groupId>net.pincette</groupId>
       <artifactId>pincette-json</artifactId>
-      <version>2.3.5</version>
+      <version>2.3.6</version>
     </dependency>
     <dependency>
       <groupId>com.auth0</groupId>
       <artifactId>java-jwt</artifactId>
-      <version>4.5.1</version>
+      <version>4.6.0</version>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
-      <version>6.0.3</version>
+      <version>6.1.2</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -77,7 +77,7 @@
       <plugin>
         <groupId>org.sonatype.central</groupId>
         <artifactId>central-publishing-maven-plugin</artifactId>
-        <version>0.10.0</version>
+        <version>0.11.0</version>
         <extensions>true</extensions>
         <configuration>
           <publishingServerId>central</publishingServerId>
@@ -107,7 +107,7 @@
             </additionalJOption>
           </additionalJOptions>
           <links>
-            <link>https://docs.oracle.com/en/java/javase/17/docs/api/</link>
+            <link>https://docs.oracle.com/en/java/javase/21/docs/api/</link>
             <link>https://www.javadoc.io/doc/com.auth0/java-jwt/latest/</link>
           </links>
           <sourceFileExcludes>
