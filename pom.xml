@@ -6,7 +6,7 @@
 
   <groupId>net.pincette</groupId>
   <artifactId>pincette-jwt</artifactId>
-  <version>1.1.9</version>
+  <version>1.1.10</version>
   <name>pincette-jwt</name>
   <description>JWT Utilities for Auth0</description>
   <url>https://github.com/wdonne/pincette-jwt</url>
@@ -62,7 +62,7 @@
     <dependency>
       <groupId>com.auth0</groupId>
       <artifactId>java-jwt</artifactId>
-      <version>4.6.1</version>
+      <version>4.6.2</version>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
